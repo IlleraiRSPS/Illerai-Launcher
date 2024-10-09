@@ -62,9 +62,9 @@ jobs:
         with:
           name: windows
           path: |
-            OpenRuneSetup.exe
-            OpenRuneSetup32.exe
-            OpenRuneSetupAArch64.exe
+            IlleraiSetup.exe
+            IlleraiSetup32.exe
+            IlleraiSetupAArch64.exe
           if-no-files-found: error
   linux:
     runs-on: ubuntu-20.04
@@ -100,14 +100,14 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: jar
-          path: target/OpenRune.jar
+          path: target/Illerai.jar
           if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with:
           name: linux
           path: |
-            OpenRune.AppImage
-            OpenRune-aarch64.AppImage
+            Illerai.AppImage
+            Illerai-aarch64.AppImage
           if-no-files-found: error
   macos:
     runs-on: macos-12
@@ -153,13 +153,13 @@ jobs:
         run: ./build-osx-aarch64.sh --build --dmg
       # tar app to keep permissions correct
       - name: tar app
-        run: tar -cf app.tar build/macos-x64/OpenRune.app build/macos-aarch64/OpenRune.app build-osx-x64.sh build-osx-aarch64.sh osx/signing.entitlements
+        run: tar -cf app.tar build/macos-x64/Illerai.app build/macos-aarch64/Illerai.app build-osx-x64.sh build-osx-aarch64.sh osx/signing.entitlements
       - uses: actions/upload-artifact@v4
         with:
           name: macos-dmg
           path: |
-            OpenRune-x64.dmg
-            OpenRune-aarch64.dmg
+            Illerai-x64.dmg
+            Illerai-aarch64.dmg
           if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with:
