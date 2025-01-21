@@ -1,4 +1,4 @@
-# RuneLite Launcher
+# RuneLite Launcher 
 This is an RSPS friendly RuneLite launcher using AWS bucket for storing assets/dependencies. 
 
 Referring to this: \
